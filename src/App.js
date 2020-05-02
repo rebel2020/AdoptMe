@@ -2,6 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import Pet from './Pet';
 import SearchParams from "./SearchParam";
+import {Router, Link} from "@reach/router";
+import Details from "./Details";
+
 /*const Pet = ({name,animal,breed})=>{
 	return React.createElement("div",{},
 		[React.createElement("h1",{},name),
@@ -23,9 +26,16 @@ const App = ()=>{
     		);*/
     	return (
     		<div>
-    			<h1>"Adopt me"</h1>
-    			<SearchParams/>
+				<header>
+				<Link to="/">
+	    			Adopt me
+				</Link>
+				</header>
+				<Router>
+	    			<SearchParams path="/"/>
+					<Details path="/details/:id"></Details>
 
+				</Router>
     		</div>
 
     		);
