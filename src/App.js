@@ -1,4 +1,8 @@
-const Pet = ({name,animal,breed})=>{
+import React from 'react';
+import {render} from 'react-dom';
+import Pet from './Pet';
+import SearchParams from "./SearchParam";
+/*const Pet = ({name,animal,breed})=>{
 	return React.createElement("div",{},
 		[React.createElement("h1",{},name),
 		React.createElement("h2",{},animal),
@@ -6,9 +10,9 @@ const Pet = ({name,animal,breed})=>{
 		]
 		)
 	};
-
+*/
 const App = ()=>{
-    	return React.createElement(
+/*    	return React.createElement(
     		"div",
     		{},
     		[React.createElement("h1",{},"Adopt me"),
@@ -16,7 +20,15 @@ const App = ()=>{
     		React.createElement(Pet,{name:"Pepper",animal:"Bird",breed:"Cockatiel"}),
     		React.createElement(Pet,{name:"Doink",animal:"Cat",breed:"Mixed"})
     		]
+    		);*/
+    	return (
+    		<div>
+    			<h1>"Adopt me"</h1>
+    			<SearchParams/>
+
+    		</div>
+
     		);
     };
 
-ReactDOM.render(React.createElement(App),document.getElementById("root"));
+render(<App/>,document.getElementById("root"));
