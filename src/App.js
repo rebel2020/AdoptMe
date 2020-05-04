@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {render} from 'react-dom';
 import Pet from './Pet';
 import SearchParams from "./SearchParam";
 import {Router, Link} from "@reach/router";
 import Details from "./Details";
+import ThemeContext from "./ThemeContext";
 
 /*const Pet = ({name,animal,breed})=>{
 	return React.createElement("div",{},
@@ -23,8 +24,10 @@ const App = ()=>{
     		React.createElement(Pet,{name:"Pepper",animal:"Bird",breed:"Cockatiel"}),
     		React.createElement(Pet,{name:"Doink",animal:"Cat",breed:"Mixed"})
     		]
-    		);*/
+			);*/
+			const themeHook=useState("red");
     	return (
+			<ThemeContext.Provider value={themeHook}>
     		<div>
 				<header>
 				<Link to="/">
@@ -34,10 +37,9 @@ const App = ()=>{
 				<Router>
 	    			<SearchParams path="/"/>
 					<Details path="/details/:id"></Details>
-
 				</Router>
     		</div>
-
+			</ThemeContext.Provider>
     		);
     };
 
